@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все записи</title>
+</head>
+<body>
+    <h1>Все рабочие дни</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Километры</th>
+                <th>Заработок</th>
+                <th>Расходы на топливо</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for work_day in work_days %}
+            <tr>
+                <td>{{ work_day.date }}</td>
+                <td>{{ work_day.kilometers }}</td>
+                <td>{{ work_day.earnings }}</td>
+                <td>{{ work_day.fuel_spent }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">Нет записей</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('add_work_day') }}">Добавить запись</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить рабочий день</title>
+</head>
+<body>
+    <h1>Добавить рабочий день</h1>
+    <form action="/add" method="post">
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        
+        <label for="kilometers">Пройдено километров:</label>
+        <input type="number" id="kilometers" name="kilometers" step="0.1" required><br><br>
+        
+        <label for="earnings">Заработано денег:</label>
+        <input type="number" id="earnings" name="earnings" step="0.01" required><br><br>
+        
+        <label for="fuel_spent">Потрачено бензина (л):</label>
+        <input type="number" id="fuel_spent" name="fuel_spent" step="0.1" required><br><br>
+        
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
