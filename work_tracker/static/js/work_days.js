@@ -108,3 +108,33 @@
     // Обновить состояние блокировки
     $lockButton.data('locked', !isLocked);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.getElementById("app-body");
+
+  // Сохраняемая тема
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.setAttribute("data-bs-theme", savedTheme);
+    themeToggle.textContent =
+      savedTheme === "dark" ? "Светлая тема" : "Тёмная тема";
+  }
+
+  // Логика переключателя
+  themeToggle.addEventListener("click", function () {
+    const currentTheme = body.getAttribute("data-bs-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+
+    // Применение темы
+    body.setAttribute("data-bs-theme", newTheme);
+
+    // Сохранение в localStorage
+    localStorage.setItem("theme", newTheme);
+
+    // Текст кнопки
+    themeToggle.textContent =
+      newTheme === "dark" ? "Светлая тема" : "Тёмная тема";
+  });
+});
+

@@ -1,0 +1,21 @@
+body.dark {
+      background-color: #121212;
+      color: #ffffff;
+  }
+
+  body.dark .table {
+      color: #ffffff;
+  }
+
+  body.dark .table thead {
+      background-color: #333333;
+  }
+
+  body.dark .btn-secondary {
+      background-color: #444444;
+      border-color: #555555;
+  }
+
+  body.dark .btn-secondary:hover {
+      background-color: #555555;
+  }
